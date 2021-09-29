@@ -1,15 +1,15 @@
 import time
-import os
-from dotenv import load_dotenv
 
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.firefox.options import Options
 
-load_dotenv()
 
-
-def execute_booking():
-    driver = webdriver.Firefox()
+def execute_booking(username, password):
+    # Starts the driver headlessy
+    options = Options()
+    options.headless = True
+    driver = webdriver.Firefox(options=options)
     driver.get("https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=login&include=login"
                "&from=prenotalezione&from_include=prenotalezione_home&_lang=it")
 
@@ -26,12 +26,12 @@ def execute_booking():
     # username
     element = driver.find_element_by_id("username")
     element.clear()
-    element.send_keys(os.environ.get("username"))
+    element.send_keys(username)
 
     # password
     element = driver.find_element_by_id("password")
     element.clear()
-    element.send_keys(os.environ.get("password"))
+    element.send_keys(password)
     # Login
     element.send_keys(Keys.RETURN)
 
@@ -52,13 +52,6 @@ def execute_booking():
         time.sleep(0.5)
         driver.find_element_by_xpath(".//*[@class='btn normal-button custom-btn-service']").click()
 
+    driver.quit()
+
     print("Booking operation finished")
-
-
-execute_booking()
-
-# elem.clear()
-# elem.send_keys("pycon")
-# elem.send_keys(Keys.RETURN)
-# assert "" not in driver.page_source
-# driver.close()
