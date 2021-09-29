@@ -6,7 +6,6 @@ from unimib_booker import execute_booking
 import os
 import sys
 
-
 # Creation of the parser
 arg_parser = argparse.ArgumentParser(description="Automatically books a lessons at unimib.")
 
@@ -18,10 +17,10 @@ arg_parser.add_argument("-n", "--now", help="execute booking immediately", actio
 arg_parser.add_argument("-u", "--username", help="Email of the university account", type=str)
 arg_parser.add_argument("-p", "--password", help="Passowrd of the university account", type=str)
 
+
 args = arg_parser.parse_args()
 
 if args.use_env:
-    print(os.getcwd())
     if os.path.exists(".env"):
         load_dotenv()
         print("INFO: Envars loaded")
@@ -31,8 +30,8 @@ if args.use_env:
         print("ERROR: Env file not present!")
 else:
     if args.username and args.password:
-        print("Running with explicit username and password")
-    else:
-        print("ERROR: Username AND Password is required (-u and -p)")
+        print("Booking started with username and password")
         execute_booking(args.username,
                         args.password)
+    else:
+        print("ERROR: Username AND Password is required (-u and -p)")
