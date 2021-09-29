@@ -3,7 +3,7 @@ Automatic bot for booking lessons in unimib
 
 ## Description
 This is a proof of concept for using a scraper (selenium) for creating an automatic booking bot for a unimib account,
-The bot is still very WIP, so it doesen't work
+The bot is still very WIP, so it doesen't work yet.
 
 ## Requirements
 In order to use this program you will need the following python dependencies:
