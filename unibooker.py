@@ -42,7 +42,7 @@ if args.scheduled:
     print("ERROR: schedule mode not implemented yet")
 else:
     if args.use_env:
-        if os.path.exists(".env"):
+        if os.path.exists(os.path.dirname(os.path.realpath(__file__)) + "/.env"):
             load_dotenv()
             print("INFO: Envars loaded")
             execute_booking(os.environ.get("username"),
