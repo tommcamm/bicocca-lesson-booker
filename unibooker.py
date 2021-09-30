@@ -28,6 +28,11 @@ arg_parser.add_argument("-p",
                         help="Passowrd of the university account",
                         type=str)
 
+arg_parser.add_argument("-v",
+                        "--verbose",
+                        help="Enable verbose logging",
+                        action="store_true")
+
 
 args = arg_parser.parse_args()
 

@@ -18,7 +18,7 @@ For using this program you need to first install all the dependencies,
 to do that run `pip install -r requirements.txt`.
 
 After you installed all pip dependencies and a selenium driver (see #requirements), you can run this program
-with `python unibooker.py <parameters>`, to see all of the available parameter run `python unibooker.py -h`.
+with `python unibooker.py <parameters>`, to see all the available parameter run `python unibooker.py -h`.
 
 If you want to use env variables for storing auth info instead of inserting them every time you run this program
 You will need to create an `.env` inside the project working directory with the following content:
@@ -26,4 +26,5 @@ You will need to create an `.env` inside the project working directory with the 
 username = "university-email-here"
 password = "university-password-here"
 ```
-change university-email-here with your university email address, and university-password-here with your uni account password
+change university-email-here with your university email address, and university-password-here with your uni account
+password.

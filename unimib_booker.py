@@ -51,6 +51,7 @@ def execute_booking(username, password):
         i.click()
         time.sleep(0.5)
         driver.find_element_by_xpath(".//*[@class='btn normal-button custom-btn-service']").click()
+        print("prenotazione effettuata")
 
     driver.quit()
 
