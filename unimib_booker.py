@@ -54,11 +54,12 @@ def execute_booking(username, password):
         for i in element:
             i.click()
             time.sleep(0.5)
+            print("Lesson booked: " + driver.find_element_by_xpath("/html/body/div[2]/div/div[1]/div/div[2]/span/p[2]/b")
+                  .get_attribute("innerHTML"))
             driver.find_element_by_xpath(".//*[@class='btn normal-button custom-btn-service']").click()
-            print("Booking done")
             book_count = book_count + 1
 
-        print("booked " + str(book_count) + " lessons")
+        print("booked " + str(book_count) + " lesson(s)")
 
     driver.quit()
 

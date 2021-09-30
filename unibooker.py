@@ -1,4 +1,5 @@
 import argparse
+import sys
 
 from dotenv import load_dotenv
 from unimib_booker import execute_booking
@@ -48,6 +49,7 @@ else:
                             os.environ.get("password"))
         else:
             print("ERROR: Env file not present!")
+            sys.exit(1)
     else:
         if args.username and args.password:
             print("Booking started with username and password")
@@ -55,3 +57,4 @@ else:
                             args.password)
         else:
             print("ERROR: Username AND Password is required (-u and -p)")
+            sys.exit(1)
