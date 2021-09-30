@@ -35,7 +35,7 @@ def execute_booking(username, password):
     # Login
     element.send_keys(Keys.RETURN)
 
-    time.sleep(1)
+    time.sleep(2)
     # Open book a lesson
     element = driver.find_element_by_link_text("Prenota il tuo posto a lezione")
     element.click()
