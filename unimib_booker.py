@@ -6,7 +6,7 @@ from selenium.webdriver.firefox.options import Options
 
 
 def execute_booking(username, password):
-    # Starts the driver headlessy
+    # Starts the driver in headless mode
     options = Options()
     options.headless = True
     driver = webdriver.Firefox(options=options)
@@ -47,11 +47,18 @@ def execute_booking(username, password):
     # Execute the booking
     element = driver.find_elements_by_partial_link_text("Verifica e prenota il tuo posto")
 
-    for i in element:
-        i.click()
-        time.sleep(0.5)
-        driver.find_element_by_xpath(".//*[@class='btn normal-button custom-btn-service']").click()
-        print("prenotazione effettuata")
+    if len(element) == 0:
+        print("No bookable lessons found...")
+    else:
+        book_count = 0
+        for i in element:
+            i.click()
+            time.sleep(0.5)
+            driver.find_element_by_xpath(".//*[@class='btn normal-button custom-btn-service']").click()
+            print("Booking done")
+            book_count = book_count + 1
+
+        print("booked " + book_count + " lessons")
 
     driver.quit()
 
