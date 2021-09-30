@@ -58,7 +58,7 @@ def execute_booking(username, password):
             print("Booking done")
             book_count = book_count + 1
 
-        print("booked " + book_count + " lessons")
+        print("booked " + str(book_count) + " lessons")
 
     driver.quit()
 
