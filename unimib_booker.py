@@ -9,7 +9,7 @@ from selenium.webdriver.firefox.options import Options
 def execute_booking(username, password):
     # Starts the driver in headless mode
     options = Options()
-    options.headless = False
+    options.headless = True
     driver = webdriver.Firefox(options=options)
     driver.get("https://gestioneorari.didattica.unimib.it/PortaleStudentiUnimib/index.php?view=login&include=login"
                "&from=prenotalezione&from_include=prenotalezione_home&_lang=it")
