@@ -52,9 +52,10 @@ else:
             sys.exit(1)
     else:
         if args.username and args.password:
-            print("Booking started with username and password")
+            print("Started booking process with username and password")
             execute_booking(args.username,
                             args.password)
         else:
             print("ERROR: Username AND Password is required (-u and -p)")
+            print("second line")
             sys.exit(1)
